@@ -19,7 +19,7 @@ class BasePage:
         return self.driver.find_elements(*locator)
 
     def scroll_down(self):
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        return self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     def present_url(self):
         return self.driver.current_url
@@ -28,5 +28,5 @@ class BasePage:
         tabs = self.driver.window_handles
         return self.driver.switch_to.window(tabs[1])
 
-    # def switch_to_frame(self, locator):
-    #     return self.driver.switch_to.frame(self.driver.find_element(*locator))
+    def refresh_page(self):
+        return self.driver.refresh()

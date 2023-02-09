@@ -1,0 +1,27 @@
+from selenium.webdriver.common.by import By
+import constants as con
+
+create_new_recipe_button = (By.XPATH, '//div[@title="Создать новый рецепт"]')
+recipe_name_field = (By.ID, 'form-recipe-name')
+save_recipe_button = (By.XPATH, '//button[@class="uk-button uk-button-primary "]')
+recipe_name_alert = (By.XPATH, '//div[text()="Введите наименование рецепта"]')
+ingredient_group = (By.XPATH, f'//div[text()="{con.ingredient_group_name}"]')
+ingredient_name = (By.XPATH, f'//div[text()="{con.ingredient_name_text}"]')
+add_ingredient_button = (By.XPATH, '//button[text()="Добавить в рецепт"]')
+added_ingredient_name = (By.XPATH, f'//span[text()="{con.ingredient_name_text}"]')
+my_recipes_button = (By.XPATH, '//div[text()="Мои рецепты"]')
+recipe_name = (By.XPATH, f'//div[text()="{con.recipe_name_text}"]')
+delete_recipe_button = (By.XPATH, '//div[normalize-space(text())="Удалить рецепт"]')
+delete_recipe_button_confirm = (By.XPATH, '//button[text()="Да"]')
+
+create_new_product_button = (By.XPATH, '//div[@title="Создать новый продукт"]')
+product_name_field = (By.XPATH, '//input[@class="js-food-edit-name"]')
+save_product_button = (By.XPATH, '//button[@class="uk-button uk-button-primary t-food-footer-save"]')
+product_name_alert = (By.XPATH, '//div[text()="Введите название продукта"]')
+product_components_fields = (By.XPATH, '//div[@class="uk-flex uk-position-relative"]/input')
+clear_components_button = (By.XPATH, '//div[text()="Очистить состав"]')
+return_button = (By.XPATH, '//div[normalize-space(text())="Создание продукта"]')
+my_products_button = (By.XPATH, '//div[text()="Мои продукты"]')
+product_name = (By.XPATH, f'//div[text()="{con.product_name_text}"]')
+delete_product_button = (By.XPATH, '//div[normalize-space(text())="Удалить продукт"]')
+delete_product_button_confirm = (By.XPATH, '//button[text()="Да"]')
