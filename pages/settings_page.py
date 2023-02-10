@@ -1,6 +1,7 @@
 from pages.base_page import BasePage
 from locators import loc_settings_page as loc
 from selenium.webdriver.common.keys import Keys
+import constants as con
 
 
 class SettingsPage(BasePage):
@@ -14,13 +15,12 @@ class SettingsPage(BasePage):
         my_account_button.click()
 
     def enter_name(self):
-        name = 'Сергей'
         name_field = self.find_all(loc.name_field)
         name_field[0].click()
         for i in range(51):
             name_field[0].send_keys(Keys.BACKSPACE)
-        name_field[0].send_keys(name)
-        return name
+        name_field[0].send_keys(con.name)
+        return con.name
 
     def save_button_click(self):
         save_button = self.find(loc.save_button)
@@ -41,26 +41,24 @@ class SettingsPage(BasePage):
         return name_alert.is_displayed()
 
     def enter_about_me(self):
-        about_me = 'Пример текста'
         about_me_field = self.find(loc.about_me_field)
         about_me_field.click()
         for i in range(151):
             about_me_field.send_keys(Keys.BACKSPACE)
-        about_me_field.send_keys(about_me)
-        return about_me
+        about_me_field.send_keys(con.about_me)
+        return con.about_me
 
     def get_about_me_field_text(self):
         about_me_field = self.find(loc.about_me_field)
         return about_me_field.text
 
     def enter_site(self):
-        site = 'Пример сайта'
         site_field = self.find_all(loc.site_field)
         site_field[1].click()
         for i in range(51):
             site_field[1].send_keys(Keys.BACKSPACE)
-        site_field[1].send_keys(site)
-        return site
+        site_field[1].send_keys(con.site)
+        return con.site
 
     def get_site_field_attr(self):
         site_field = self.find_all(loc.site_field)
@@ -99,24 +97,22 @@ class SettingsPage(BasePage):
         personal_data_button.click()
 
     def height_text(self):
-        height_text = '195'
         height = self.find_all(loc.height_field)
         height[0].click()
         height[0].send_keys(Keys.BACKSPACE)
-        height[0].send_keys(height_text)
-        return height_text
+        height[0].send_keys(con.height_text)
+        return con.height_text
 
     def get_height_attr(self):
         height = self.find_all(loc.height_field)
         return height[0].get_attribute('value')
 
     def weight_text(self):
-        weight_text = '80'
         weight = self.find_all(loc.weight_field)
         weight[1].click()
         weight[1].send_keys(Keys.BACKSPACE)
-        weight[1].send_keys(weight_text)
-        return weight_text
+        weight[1].send_keys(con.weight_text)
+        return con.weight_text
 
     def get_weight_attr(self):
         weight = self.find_all(loc.weight_field)

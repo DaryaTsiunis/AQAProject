@@ -1,7 +1,9 @@
 from pages.settings_page import SettingsPage
 import allure
+import pytest
 
 
+@pytest.mark.order(26)
 @allure.feature('Check settings page')
 @allure.story('Check settings page is open')
 def test_settings_page(driver):
@@ -12,6 +14,7 @@ def test_settings_page(driver):
         assert settings_page.present_url() == 'https://tvoydnevnik.com/people/user/20139564/edit'
 
 
+@pytest.mark.order(27)
 @allure.feature('Check settings page')
 @allure.story('Check enter name field with blank')
 def test_enter_name_field_with_blank(driver):
@@ -28,6 +31,7 @@ def test_enter_name_field_with_blank(driver):
         settings_page.name_alert_is_displayed()
 
 
+@pytest.mark.order(28)
 @allure.feature('Check settings page')
 @allure.story('Check enter name field with data')
 def test_enter_name_field_with_data(driver):
@@ -46,6 +50,7 @@ def test_enter_name_field_with_data(driver):
         assert name_text == name_value
 
 
+@pytest.mark.order(29)
 @allure.feature('Check settings page')
 @allure.story('Check about me field with data')
 def test_about_me_field_with_data(driver):
@@ -64,6 +69,7 @@ def test_about_me_field_with_data(driver):
         assert about_me == about_me_text
 
 
+@pytest.mark.order(30)
 @allure.feature('Check settings page')
 @allure.story('Check site field with data')
 def test_site_field_with_data(driver):
@@ -82,6 +88,7 @@ def test_site_field_with_data(driver):
         assert site_text == site_value
 
 
+@pytest.mark.order(31)
 @allure.feature('Check settings page')
 @allure.story('Check main theme color')
 def test_main_theme(driver):
@@ -96,6 +103,7 @@ def test_main_theme(driver):
         assert settings_page.get_main_theme() == 'default'
 
 
+@pytest.mark.order(32)
 @allure.feature('Check settings page')
 @allure.story('Check main text theme')
 def test_text_main_theme(driver):
@@ -110,6 +118,7 @@ def test_text_main_theme(driver):
         assert settings_page.get_main_text_theme() == 'Arial'
 
 
+@pytest.mark.order(33)
 @allure.feature('Check settings page')
 @allure.story('Check height data')
 def test_height_data(driver):
@@ -126,6 +135,7 @@ def test_height_data(driver):
         assert height_text == height_value
 
 
+@pytest.mark.order(34)
 @allure.feature('Check settings page')
 @allure.story('Check weight data')
 def test_weight_data(driver):
@@ -142,6 +152,7 @@ def test_weight_data(driver):
         assert weight_text == weight_value
 
 
+@pytest.mark.order(35)
 @allure.feature('Check settings page')
 @allure.story('Check logout button')
 def test_logout_button(driver):

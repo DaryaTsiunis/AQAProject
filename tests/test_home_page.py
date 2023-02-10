@@ -1,7 +1,10 @@
 from pages.home_page import HomePage
 import allure
+import pytest
+import constants as con
 
 
+@pytest.mark.order(6)
 @allure.feature('Check home page')
 @allure.story('Check home page is open')
 def test_home_page(driver):
@@ -12,6 +15,7 @@ def test_home_page(driver):
         assert home_page.present_url() == 'https://tvoydnevnik.com/'
 
 
+@pytest.mark.order(7)
 @allure.feature('Check home page')
 @allure.story('Check bell button')
 def test_bell_button(driver):
@@ -24,6 +28,7 @@ def test_bell_button(driver):
         assert home_page.notifications_is_displayed()
 
 
+@pytest.mark.order(8)
 @allure.feature('Check home page')
 @allure.story('Check messages button')
 def test_messages_button(driver):
@@ -36,6 +41,7 @@ def test_messages_button(driver):
         assert home_page.my_messages_is_displayed()
 
 
+@pytest.mark.order(9)
 @allure.feature('Check home page')
 @allure.story('Check new message button')
 def test_new_message_button(driver):
@@ -48,6 +54,7 @@ def test_new_message_button(driver):
         assert home_page.my_new_message_is_displayed()
 
 
+@pytest.mark.order(10)
 @allure.feature('Check home page')
 @allure.story('Check settings button')
 def test_setting_button(driver):
@@ -60,6 +67,7 @@ def test_setting_button(driver):
         assert home_page.settings_is_displayed()
 
 
+@pytest.mark.order(11)
 @allure.feature('Check home page')
 @allure.story('Check contacts button')
 def test_contacts_button(driver):
@@ -74,6 +82,7 @@ def test_contacts_button(driver):
         assert home_page.contacts_is_displayed()
 
 
+@pytest.mark.order(12)
 @allure.feature('Check home page')
 @allure.story('Check help and support button')
 def test_help_and_support_button(driver):
@@ -86,6 +95,7 @@ def test_help_and_support_button(driver):
         assert home_page.help_and_support_is_displayed()
 
 
+@pytest.mark.order(13)
 @allure.feature('Check home page')
 @allure.story('Check side menu button')
 def test_side_menu_button(driver):
@@ -98,6 +108,7 @@ def test_side_menu_button(driver):
         assert home_page.side_menu_is_displayed()
 
 
+@pytest.mark.order(14)
 @allure.feature('Check home page')
 @allure.story('Check google store button')
 def test_google_store_button(driver):
@@ -109,9 +120,10 @@ def test_google_store_button(driver):
     with allure.step('Switch to tab'):
         home_page.switch_to_window()
     with allure.step('Product in google store is displayed'):
-        assert home_page.google_store_product_name() == 'Дневник Зожника'
+        assert home_page.google_store_product_name() == con.google_store_product_name
 
 
+@pytest.mark.order(15)
 @allure.feature('Check home page')
 @allure.story('Check apple store button')
 def test_apple_store_button(driver):
@@ -123,4 +135,4 @@ def test_apple_store_button(driver):
     with allure.step('Switch to tab'):
         home_page.switch_to_window()
     with allure.step('Product in apple store is displayed'):
-        assert home_page.apple_store_product_name() == 'Дневник зожника 9+'
+        assert home_page.apple_store_product_name() == con.apple_store_product_name

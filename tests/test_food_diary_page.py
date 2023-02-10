@@ -1,7 +1,9 @@
 from pages.food_diary_page import FoodDiaryPage
 import allure
+import pytest
 
 
+@pytest.mark.order(16)
 @allure.feature('Check food diary page')
 @allure.story('Check food diary page is open')
 def test_food_diary_page(driver):
@@ -12,6 +14,7 @@ def test_food_diary_page(driver):
         assert food_diary_page.present_url() == food_diary_page.page_url
 
 
+@pytest.mark.order(18)
 @allure.feature('Check food diary page')
 @allure.story('Check create recipe - name alert')
 def test_create_new_recipe_name_alert(driver):
@@ -26,6 +29,7 @@ def test_create_new_recipe_name_alert(driver):
         assert food_diary_page.recipe_name_alert_is_displayed()
 
 
+@pytest.mark.order(19)
 @allure.feature('Check food diary page')
 @allure.story('Check create recipe - add ingredient')
 def test_create_new_recipe_add_ingredient(driver):
@@ -40,6 +44,7 @@ def test_create_new_recipe_add_ingredient(driver):
         assert food_diary_page.added_ingredient_is_displayed()
 
 
+@pytest.mark.order(17)
 @allure.feature('Check food diary page')
 @allure.story('Check create recipe')
 def test_create_new_recipe(driver):
@@ -58,6 +63,7 @@ def test_create_new_recipe(driver):
         assert food_diary_page.my_recipe_is_displayed()
 
 
+@pytest.mark.order(20)
 @allure.feature('Check food diary page')
 @allure.story('Check delete recipe')
 def test_delete_new_recipe(driver):
@@ -75,6 +81,7 @@ def test_delete_new_recipe(driver):
         assert food_diary_page.my_recipe_is_not_displayed() == 0
 
 
+@pytest.mark.order(22)
 @allure.feature('Check food diary page')
 @allure.story('Check create product - name alert')
 def test_create_new_product_name_alert(driver):
@@ -89,6 +96,7 @@ def test_create_new_product_name_alert(driver):
         assert food_diary_page.product_name_alert_is_displayed()
 
 
+@pytest.mark.order(23)
 @allure.feature('Check food diary page')
 @allure.story('Check create product - product components')
 def test_create_new_product_add_components(driver):
@@ -105,6 +113,7 @@ def test_create_new_product_add_components(driver):
         assert enter_value == get_value
 
 
+@pytest.mark.order(24)
 @allure.feature('Check food diary page')
 @allure.story('Check create product - product components clear')
 def test_create_new_product_clear_components(driver):
@@ -123,6 +132,7 @@ def test_create_new_product_clear_components(driver):
         assert get_value == ('0', '0', '0', '0')
 
 
+@pytest.mark.order(21)
 @allure.feature('Check food diary page')
 @allure.story('Check create product')
 def test_create_new_product(driver):
@@ -143,6 +153,7 @@ def test_create_new_product(driver):
         assert food_diary_page.my_product_is_displayed()
 
 
+@pytest.mark.order(25)
 @allure.feature('Check food diary page')
 @allure.story('Check delete product')
 def test_delete_new_product(driver):
